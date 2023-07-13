@@ -1,0 +1,14 @@
+{
+  "name": "curso-typescrypt",
+  "version": "1.0.0",
+  "description": "Projeto criado para aprender Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Vinícius (V1nic1us)",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
