@@ -1,52 +1,49 @@
-export class Person {
+export class Company {
+  public readonly name: string;
+  protected readonly collaborators: Collaborators[] = [];
+  protected readonly cnpj: string;
+
+  constructor(name: string, cnpj: string) {
+    this.name = name;
+    this.cnpj = cnpj;
+  }
+
+  setCollaborator(collaborators: Collaborators): void {
+    this.collaborators.push(collaborators);
+  }
+
+  getCollaborator(): void {
+    for (const collaborator of this.collaborators) {
+      console.log(collaborator);
+    }
+  }
+}
+
+export class Udemy extends Company {
+  constructor() {
+    super('Udemy', '11.111.111/0001-11');
+  }
+
+  popCollaborators(): Collaborators | null {
+    const collaborator = this.collaborators.pop();
+    if (collaborator) return collaborator;
+    return null;
+  }
+}
+
+export class Collaborators {
   constructor(
-    public name: string,
-    public lastName: string,
-    private age: number,
-    protected cpf: string,
+    public readonly name: string,
+    public readonly lastName: string,
   ) {}
-
-  getAge(): number {
-    return this.age;
-  }
-
-  getCpf(): string {
-    return this.cpf;
-  }
-
-  getFullName(): string {
-    return this.name + ' ' + this.lastName;
-  }
 }
 
-export class Student extends Person {
-  constructor(
-    name: string,
-    lastName: string,
-    age: number,
-    cpf: string,
-    public sala: string,
-  ) {
-    super(name, lastName, age, cpf);
-  }
-
-  getFullName(): string {
-    console.log('Fazendo coisas antes');
-    const result = super.getFullName;
-    return result + 'Heyyy!!!';
-  }
-}
-
-export class Client extends Person {
-  getFullName(): string {
-    return 'Client: ' + this.name + ' ' + this.lastName;
-  }
-}
-
-const student = new Student('Marcus', 'Vinícius', 30, '000.000.000-00', '000');
-const person = new Person('Marcus', 'Vinícius', 30, '000.000.000-00');
-const client = new Client('Marcus', 'Vinícius', 30, '000.000.000-00');
-
-console.log(student.getFullName());
-console.log(person.getFullName());
-console.log(client.getFullName());
+const company1 = new Udemy();
+const collaborators1 = new Collaborators('Marcus', 'Vinícius');
+const collaborators2 = new Collaborators('colaborador', '2');
+const collaborators3 = new Collaborators('colaborador', '3');
+company1.setCollaborator(collaborators1);
+company1.setCollaborator(collaborators2);
+company1.setCollaborator(collaborators3);
+company1.popCollaborators();
+console.log(company1);
