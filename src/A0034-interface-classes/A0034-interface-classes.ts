@@ -1,7 +1,7 @@
 interface VideoPlayerElements {
   videoPlayer: HTMLVideoElement;
-  playButton: HTMLVideoElement;
-  stopButton: HTMLVideoElement;
+  playButton: HTMLButtonElement;
+  stopButton: HTMLButtonElement;
 }
 
 interface VideoPlayerProtocol {
@@ -18,8 +18,8 @@ export default class VideoPlayer implements VideoPlayerProtocol {
   }
 
   private videoPlayer: HTMLVideoElement;
-  private playButton: HTMLVideoElement;
-  private stopButton: HTMLVideoElement;
+  private playButton: HTMLButtonElement;
+  private stopButton: HTMLButtonElement;
 
   playToggle(): void {
     if (this.videoPlayer.paused) {
@@ -46,8 +46,8 @@ export default class VideoPlayer implements VideoPlayerProtocol {
 
 const videoPlayer = new VideoPlayer({
   videoPlayer: document.querySelector('.video') as HTMLVideoElement,
-  playButton: document.querySelector('.video') as HTMLVideoElement,
-  stopButton: document.querySelector('.video') as HTMLVideoElement,
+  playButton: document.querySelector('.play') as HTMLButtonElement,
+  stopButton: document.querySelector('.stop') as HTMLButtonElement,
 });
 
 videoPlayer.startEvents();
