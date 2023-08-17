@@ -10,6 +10,9 @@
   "author": "Marcus Vinícius (V1nic1us)",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash": "^4.14.197",
+    "@types/node": "^20.5.0",
+    "@types/validator": "^13.11.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.44.0",
@@ -17,12 +20,13 @@
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.0",
     "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@types/validator": "^13.7.17",
+    "lodash": "^4.17.21",
     "validator": "^13.9.0"
   }
 }
